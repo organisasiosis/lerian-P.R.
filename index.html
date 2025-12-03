@@ -1,47 +1,42 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Keuangan - Format Rupiah</title>
+    <title>Kalkulator Keuangan Modern</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Kalkulator Keuangan (Format Rupiah Otomatis)</h2>
+<h2>Kalkulator Manajemen Keuangan</h2>
+<p class="subtitle">Hitung sisa uang bulanan & waktu mencapai target tabungan</p>
 
-<table>
-    <tr>
-        <th>Keterangan</th>
-        <th>Nilai (Rp)</th>
-    </tr>
-    <tr>
-        <td>Pendapatan per Bulan</td>
-        <td><input id="pendapatan" type="text" oninput="formatRupiah(this)"></td>
-    </tr>
-    <tr>
-        <td>Pengeluaran per Bulan</td>
-        <td><input id="pengeluaran" type="text" oninput="formatRupiah(this)"></td>
-    </tr>
-    <tr>
-        <td>Target Tabungan</td>
-        <td><input id="target" type="text" oninput="formatRupiah(this)"></td>
-    </tr>
-</table>
+<div class="card">
+    <label>Pendapatan Bulanan</label>
+    <input id="pendapatan" type="text" placeholder="Contoh: 5.000.000" oninput="formatRupiah(this)">
+    
+    <label>Pengeluaran Bulanan</label>
+    <input id="pengeluaran" type="text" placeholder="Contoh: 2.500.000" oninput="formatRupiah(this)">
+    
+    <label>Target Tabungan</label>
+    <input id="target" type="text" placeholder="Contoh: 10.000.000" oninput="formatRupiah(this)">
 
-<button onclick="hitungKeuangan()">Hitung</button>
+    <button onclick="hitungKeuangan()">Hitung</button>
+</div>
 
-<h3>Hasil Perhitungan</h3>
-<table>
-    <tr>
-        <td>Sisa Uang per Bulan</td>
-        <td id="sisa"></td>
-    </tr>
-    <tr>
-        <td>Perkiraan Waktu mencapai Target</td>
-        <td id="waktu"></td>
-    </tr>
-</table>
+<div id="hasil" class="result hidden">
+    <h3>Hasil Perhitungan</h3>
+
+    <div class="card result-box">
+        <p><strong>Sisa uang per bulan:</strong> <span id="sisa"></span></p>
+        <p><strong>Waktu untuk mencapai target:</strong> <span id="waktu"></span></p>
+        <p><strong>Persentase progress:</strong> <span id="persen"></span></p>
+
+        <div class="progressbar">
+            <div id="progress"></div>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
