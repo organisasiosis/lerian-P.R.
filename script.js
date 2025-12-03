@@ -4,21 +4,19 @@ function hitungKeuangan() {
     let target = document.getElementById("target").value;
 
     if (pendapatan <= 0 || pengeluaran <= 0 || target <= 0) {
-        document.getElementById("hasil").innerHTML = "Masukkan semua data dengan benar!";
+        alert("Masukkan semua data dengan benar!");
         return;
     }
 
     let sisa = pendapatan - pengeluaran;
 
     if (sisa <= 0) {
-        document.getElementById("hasil").innerHTML = 
-            "Pengeluaran lebih besar dari pendapatan! Kurangi pengeluaran atau tambah pendapatan.";
+        alert("Pengeluaran lebih besar dari pendapatan! Kurangi pengeluaran atau tambah pendapatan.");
         return;
     }
 
     let bulan = (target / sisa).toFixed(1);
 
-    document.getElementById("hasil").innerHTML =
-        `Sisa uang per bulan: Rp ${sisa} <br> 
-         Perkiraan waktu untuk mencapai target: ${bulan} bulan`;
+    document.getElementById("sisa").innerHTML = `Rp ${sisa}`;
+    document.getElementById("waktu").innerHTML = `${bulan} bulan`;
 }
