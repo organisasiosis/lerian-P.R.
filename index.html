@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Keuangan - Excel Style</title>
+    <title>Kalkulator Keuangan - Format Rupiah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Kalkulator Keuangan (Style Excel)</h2>
+<h2>Kalkulator Keuangan (Format Rupiah Otomatis)</h2>
 
 <table>
     <tr>
@@ -17,15 +17,15 @@
     </tr>
     <tr>
         <td>Pendapatan per Bulan</td>
-        <td><input id="pendapatan" type="number"></td>
+        <td><input id="pendapatan" type="text" oninput="formatRupiah(this)"></td>
     </tr>
     <tr>
         <td>Pengeluaran per Bulan</td>
-        <td><input id="pengeluaran" type="number"></td>
+        <td><input id="pengeluaran" type="text" oninput="formatRupiah(this)"></td>
     </tr>
     <tr>
         <td>Target Tabungan</td>
-        <td><input id="target" type="number"></td>
+        <td><input id="target" type="text" oninput="formatRupiah(this)"></td>
     </tr>
 </table>
 
@@ -38,7 +38,7 @@
         <td id="sisa"></td>
     </tr>
     <tr>
-        <td>Perkiraan Waktu untuk Mencapai Target</td>
+        <td>Perkiraan Waktu mencapai Target</td>
         <td id="waktu"></td>
     </tr>
 </table>
