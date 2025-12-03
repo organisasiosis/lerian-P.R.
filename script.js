@@ -1,7 +1,17 @@
+function formatRupiah(input) {
+    let value = input.value.replace(/\D/g, ""); // hanya angka
+    let formatted = new Intl.NumberFormat("id-ID").format(value);
+    input.value = formatted;
+}
+
+function getNumber(value) {
+    return parseInt(value.replace(/\./g, "")) || 0;
+}
+
 function hitungKeuangan() {
-    let pendapatan = document.getElementById("pendapatan").value;
-    let pengeluaran = document.getElementById("pengeluaran").value;
-    let target = document.getElementById("target").value;
+    let pendapatan = getNumber(document.getElementById("pendapatan").value);
+    let pengeluaran = getNumber(document.getElementById("pengeluaran").value);
+    let target = getNumber(document.getElementById("target").value);
 
     if (pendapatan <= 0 || pengeluaran <= 0 || target <= 0) {
         alert("Masukkan semua data dengan benar!");
@@ -9,14 +19,13 @@ function hitungKeuangan() {
     }
 
     let sisa = pendapatan - pengeluaran;
-
     if (sisa <= 0) {
-        alert("Pengeluaran lebih besar dari pendapatan! Kurangi pengeluaran atau tambah pendapatan.");
+        alert("Pengeluaran lebih besar dari pendapatan!");
         return;
     }
 
     let bulan = (target / sisa).toFixed(1);
 
-    document.getElementById("sisa").innerHTML = `Rp ${sisa}`;
+    document.getElementById("sisa").innerHTML = `Rp ${new Intl.NumberFormat("id-ID").format(sisa)}`;
     document.getElementById("waktu").innerHTML = `${bulan} bulan`;
-}
+        }
