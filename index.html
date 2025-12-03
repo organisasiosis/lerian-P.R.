@@ -3,22 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Keuangan</title>
+    <title>Kalkulator Keuangan - Excel Style</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Kalkulator Keuangan</h2>
+<h2>Kalkulator Keuangan (Style Excel)</h2>
 
-    <div class="container">
-        <input id="pendapatan" type="number" placeholder="Pendapatan per bulan (Rp)">
-        <input id="pengeluaran" type="number" placeholder="Pengeluaran per bulan (Rp)">
-        <input id="target" type="number" placeholder="Target tabungan (Rp)">
-        
-        <button onclick="hitungKeuangan()">Hitung</button>
-        <p id="hasil" class="result"></p>
-    </div>
+<table>
+    <tr>
+        <th>Keterangan</th>
+        <th>Nilai (Rp)</th>
+    </tr>
+    <tr>
+        <td>Pendapatan per Bulan</td>
+        <td><input id="pendapatan" type="number"></td>
+    </tr>
+    <tr>
+        <td>Pengeluaran per Bulan</td>
+        <td><input id="pengeluaran" type="number"></td>
+    </tr>
+    <tr>
+        <td>Target Tabungan</td>
+        <td><input id="target" type="number"></td>
+    </tr>
+</table>
 
-    <script src="script.js"></script>
+<button onclick="hitungKeuangan()">Hitung</button>
+
+<h3>Hasil Perhitungan</h3>
+<table>
+    <tr>
+        <td>Sisa Uang per Bulan</td>
+        <td id="sisa"></td>
+    </tr>
+    <tr>
+        <td>Perkiraan Waktu untuk Mencapai Target</td>
+        <td id="waktu"></td>
+    </tr>
+</table>
+
+<script src="script.js"></script>
 </body>
 </html>
