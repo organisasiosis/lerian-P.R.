@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Keuangan Modern</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Keuangan</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Kalkulator Keuangan (Format Rupiah Otomatis)</h2>
-<p class="subtitle">Kelola keuanganmu dan capai tujuan lebih mudah</p>
+<h2>Kalkulator Keuangan</h2>
 
-<div class="card">
-    <label>Pendapatan Bulanan</label>
-    <input id="pendapatan" type="text" placeholder="Contoh: 5.000.000" oninput="formatRupiah(this)">
-    
-    <label>Pengeluaran Bulanan</label>
-    <input id="pengeluaran" type="text" placeholder="Contoh: 2.500.000" oninput="formatRupiah(this)">
-    
-    <label>Target Tabungan</label>
-    <input id="target" type="text" placeholder="Contoh: 10.000.000" oninput="formatRupiah(this)">
+<div class="container">
 
-    <button onclick="hitungKeuangan()">Hitung</button>
+<label>Pendapatan per Bulan</label>
+<input id="pendapatan" type="text" oninput="formatRupiah(this)" placeholder="contoh: 5.000.000">
+
+<label>Pengeluaran per Bulan</label>
+<input id="pengeluaran" type="text" oninput="formatRupiah(this)" placeholder="contoh: 2.500.000">
+
+<label>Target Tabungan</label>
+<input id="target" type="text" oninput="formatRupiah(this)" placeholder="contoh: 20.000.000">
+
+<button onclick="hitungKeuangan()">Hitung</button>
+
+<hr>
+
+<h3>Hasil Perhitungan</h3>
+<div id="hasil"></div>
+
+<div id="progressSection" style="display:none;">
+    <h4>Progress Mencapai Target</h4>
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+    <p id="progressText"></p>
 </div>
 
-<div id="hasil" class="result hidden">
-    <h3>📊 Hasil Perhitungan</h3>
-
-    <div class="result-card">
-        <p class="label">Sisa Uang per Bulan</p>
-        <p class="value" id="sisa"></p>
-
-        <p class="label">Estimasi Waktu Mencapai Target</p>
-        <p class="value" id="waktu"></p>
-
-        <p class="label">Progress Target</p>
-        <p class="value" id="persen"></p>
-
-        <div class="progressbar">
-            <div id="progress"></div>
-        </div>
-    </div>
 </div>
 
 <script src="script.js"></script>
