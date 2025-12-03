@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<h2>Kalkulator Manajemen Keuangan</h2>
-<p class="subtitle">Hitung sisa uang bulanan & waktu mencapai target tabungan</p>
+<h2>Kalkulator Keuangan (Format Rupiah Otomatis)</h2>
+<p class="subtitle">Kelola keuanganmu dan capai tujuan lebih mudah</p>
 
 <div class="card">
     <label>Pendapatan Bulanan</label>
@@ -25,12 +25,17 @@
 </div>
 
 <div id="hasil" class="result hidden">
-    <h3>Hasil Perhitungan</h3>
+    <h3>📊 Hasil Perhitungan</h3>
 
-    <div class="card result-box">
-        <p><strong>Sisa uang per bulan:</strong> <span id="sisa"></span></p>
-        <p><strong>Waktu untuk mencapai target:</strong> <span id="waktu"></span></p>
-        <p><strong>Persentase progress:</strong> <span id="persen"></span></p>
+    <div class="result-card">
+        <p class="label">Sisa Uang per Bulan</p>
+        <p class="value" id="sisa"></p>
+
+        <p class="label">Estimasi Waktu Mencapai Target</p>
+        <p class="value" id="waktu"></p>
+
+        <p class="label">Progress Target</p>
+        <p class="value" id="persen"></p>
 
         <div class="progressbar">
             <div id="progress"></div>
